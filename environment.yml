@@ -1,0 +1,14 @@
+name: sevgae
+channels:
+  - pytorch
+  - nvidia
+dependencies:
+  - python == 3.7
+  - pip
+  - pytorch=1.8.1
+  - cudatoolkit=11.3
+  - tqdm
+  - ninja=1.12.1
+  - numba
+  - networkx
+  - pandas
