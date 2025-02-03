@@ -26,14 +26,14 @@ pip install torch-geometric -f https://pytorch-geometric.com/whl/torch-1.8.1+cu1
 ```
 
 ## Dataset
-For downloading the dataset, please refer to <a href="https://github.com/JanineCHEN/FP4S/tree/main/dataset">dataset</a>.
+For downloading the dataset, please refer to <a href="https://github.com/JanineCHEN/SE-VGAE/tree/main/data">data</a>.
 
 ## Training
 For training the FP4S model, please run:
 ```
 python main.py
 ```
-For customized configuration, please refer to `utils/config.py`
+For customized configuration, please refer to <a href="https://github.com/JanineCHEN/SE-VGAE/tree/main/utils/config.py">config</a>.
 
 ### Acknowledgement
 The computational work for this article was performed on resources of the National Supercomputing Centre, Singapore (https://www.nscc.sg). The data sources used in this study are also gratefully acknowledged. This research was supported by the President’s Graduate Fellowship of the National University of Singapore and the Singapore Data Science Consortium (SDSC) Dissertation Research Fellowship.
