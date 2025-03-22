@@ -515,14 +515,14 @@ class EGT_GRAPHVAE(EGT):
             if not cfg.ifNED:
                 z_quantized, emb_quantized, z_g_tmp, z_g_mu_tmp, z_g_sigma_tmp, \
                     ws_A, ws_X, x_A, x_X, Ag_pred, Ag_pred_style, Xg_pred, Xg_pred_style = self.vq_vae(A_pad, X_pad)
-                vq_loss = self.vector_quantizer.loss_function(z_quantized, emb_quantized)
+                vq_loss = self.vector_quantizer.loss_function(z_g_tmp, emb_quantized)
                 kl_loss = torch.mean(-(0.5) * (1 + z_g_sigma_tmp - z_g_mu_tmp**2 - torch.exp(z_g_sigma_tmp) ** 2))
             if cfg.ifNED:
                 z_n_quantized, emb_n_quantized, z_e_quantized, emb_e_quantized, z_g_n_graph, z_g_e_graph, \
                     z_g_mu, z_g_sigma, z_n_mu, z_n_sigma, z_e_mu, z_e_sigma, \
                     ws_A, ws_X, x_A, x_X, Ag_pred, Ag_pred_style, Xg_pred, Xg_pred_style = self.vq_vae(A_pad, X_pad)
-                vq_loss = self.vector_quantizer_n.loss_function(z_n_quantized, emb_n_quantized) + \
-                    self.vector_quantizer_e.loss_function(z_e_quantized, emb_e_quantized)
+                vq_loss = self.vector_quantizer_n.loss_function(z_g_n_graph, emb_n_quantized) + \
+                    self.vector_quantizer_e.loss_function(z_g_e_graph, emb_e_quantized)
                 kl_loss = torch.mean(-(0.5) * (1 + z_g_sigma - z_g_mu**2 - torch.exp(z_g_sigma) ** 2)) + \
                             torch.mean(-(0.5) * (1 + z_n_sigma - z_n_mu**2 - torch.exp(z_n_sigma) ** 2)) + \
                             torch.mean(-(0.5) * (1 + z_e_sigma - z_e_mu**2 - torch.exp(z_e_sigma) ** 2))
