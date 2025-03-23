@@ -124,8 +124,7 @@ def train(train_loader, model, _epoch, optimizer, scheduler):
                         adj_loss {adj_loss}, adj_style_loss {adj_style_loss}, fea_loss {fea_loss}, \
                         fea_style_loss {fea_style_loss}, kl_loss {kl_loss}, vq_loss {vq_loss}'
                     + "\n")
-                
-        break
+
             
     #SAVE CHECKPOINT
     if _epoch % 1 == 0:
